@@ -1,0 +1,21 @@
+{
+  "name": "business_locations",
+  "version": "1.0.0",
+  "description": "Comparing Active Businesses dataset and Alachua Country Property Data",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Siglani Amardeepsingh",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.4.1",
+    "body-parser": "^1.17.2",
+    "color": "^3.0.0",
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "fs": "0.0.1-security",
+    "moment": "^2.18.1",
+    "mysql": "^2.13.0"
+  }
+}

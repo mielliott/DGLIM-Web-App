@@ -1,0 +1,94 @@
+<% include partials/header.ejs %>
+
+<section id="left-panel">
+
+    <header style="margin-bottom: 5px">Dataset:</header>
+    <section>    
+        <select id="dataset" style="width: 58%">
+            <option value="act_bus_data" selected disabled>Dataset</option>
+            <option value="act_bus_data">Active Businesses</option>
+            <option value="acpafl_data">ACPAFL Data</option>
+            <option value="permits_data">Permits Data</option>
+        </select>
+        <select id="direction" style="width: 40%">
+            <option value="NW" selected disabled>Direction</option>
+            <option value="N">N</option>
+            <option value="S">S</option>
+            <option value="E">E</option>
+            <option value="W">W</option>
+            <option value="NW">NW</option>
+            <option value="NE">NE</option>
+            <option value="SW">SW</option>
+            <option value="SE">SE</option>
+        </select><br>
+    </section>
+    <hr>
+    <section>
+        
+        <div>
+            <p style="margin-bottom: 0">Business Type:</p>
+            <select id="business_type" name="business_type" style="width: 49%">
+                <option value="RESTAURANT" selected>Restaurant</option>
+                <option value="INTERIOR JANITORIAL AND CLEANING SERVICES">Interior Janitorial</option>
+                <option value="EXTERIOR JANITORIAL AND CLEANING SERVICES">Exterior Janitorial</option>
+            </select>
+            <button id="plot_common" style="width: 49%">Plot Common</button>
+        </div>
+        <div>
+            <button id="submitButton" style="width: 49%">Submit</button>
+            <button id="clear_button" style="width: 49%">Clear</button>
+        </div>
+    </section>
+    <section>
+        <div>
+            <p style="margin-bottom: 0">Overlay:</p>
+            <select id="overlay_style" name="overlay_style" style="width: 100%">
+                <option value="TRACT IDS">Tract IDs</option>
+                <option value="SUCCESS" selected>Success Rate</option>
+                <option value="SURVEYED">Surveyed Businesses</option>
+                <option value="ACTIVE BUSINESSES">Active Businesses</option>
+                <option value="POPULATION">Population</option>
+                <option value="ACTIVE BUSINESSES VS POPULATION">Active Businesses vs. Population</option>
+                <option value="POPULATION PER BUSINESS VS SUCCESS">Population per Business vs. Success</option>
+            </select>
+        </div>
+            <button id="show_overlay_button" style="width: 49%">Show</button>
+            <button id="hide_overlay_button" style="width: 49%">Hide</button>
+        <div>
+
+        </div>
+    </section>
+</section>
+
+<div id="map"></div>
+
+
+<script type="text/javascript" src="/scripts/map.js"></script>
+<script>
+    data = <%- JSON.stringify(data) %>;
+    //console.log("home.ejs: " + info.length);
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH4FSS7GNZc7K36rIXV23SrYfMlql8smo"></script> <!--&callback=initMap-->
+<script type="text/javascript" src="/scripts/maplabel-compiled.js"></script>
+<script>
+    initMap();
+</script>
+<!--script src="https://github.com/googlemaps/js-map-label/blob/gh-pages/src/maplabel-compiled.js"></script-->
+
+<% include partials/footer.ejs %>
+
+<!--<option value="Stores">Stores</option>-->
+<!--<option value="Auto_sales">Auto Sales</option>-->
+<!--<option value="Active_Business">Active Businesses</option>-->
+<!--<option value="Financial">Financial</option>-->
+<!--<option value="Food_proc">Food Processing</option>-->
+<!--<option value="Hospital">Hospital</option>-->
+<!--<option value="Motel">Motel</option>-->
+<!--<option value="Multifamily"></option>-->
+<!--<option value="NighClubs"></option>-->
+<!--<option value="Restaurant"></option>-->
+<!--<option value="ServiceShops"></option>-->
+<!--<option value="ServStations"></option>-->
+<!--<option value="SuperMarket"></option>-->
+<!--<option value="Theater"></option>-->
+<!--<option value="Wholesaler"></option>-->

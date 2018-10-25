@@ -1,0 +1,48 @@
+<% var info = JSON.parse(data.info); %>
+<html>
+    <head>
+        <title>Business Info</title>
+    </head>
+    <body>
+        <div style="position:relative;width:80%; margin:0 auto;text-align:center">
+            <h2>Data Page</h2>
+            <table border = "2" style="text-align:center; margin: 0 auto;">
+                <thead>
+                    <tr>
+                        <th>Business Name</th>
+                        <th>Business Type</th>
+                        <th>Address</th>
+                        <th>Start Date</th>
+                        <th>Permits Info</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><%= info.name %></td>
+                        <td><%= info.business_type %></td>
+                        <td><%= info.address %></td>
+                        <td><%= info.start_date %></td>
+                        <td>
+                            <table border="1">
+                                <tr>
+                                    <th>primary_party</th>
+                                    <th>issue_date</th>
+                                    <th>Classification</th>
+                                </tr>
+                                <% info.permits.forEach(permit=>{ %>
+                                    <tr>
+                                        <td><%= permit.primary_party %></td>  
+                                        <td><%= permit.issue_date %></td>  
+                                        <td><%= permit.classification %></td>  
+                                    </tr>
+                                <% }); %>
+                            </table>
+                        </td>
+                    </tr>                        
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
+
+
